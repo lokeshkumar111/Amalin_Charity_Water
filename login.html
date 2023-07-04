@@ -8,8 +8,9 @@
         /* start login css */
 
         #mainContainer{
-            /* background-color: #7fa467; */
+            /* background-color: #15614b; */
             background-color: white;
+            width:100%;
             padding:5px;
             margin-top: 40px;
         }
@@ -67,8 +68,8 @@
             padding:10px;
             margin-left: 2px;
            
-            background-color:#7fa467;
-            color:  white;
+            background-color:#7fa46769;
+            color:  #084f49;
             border: 1px solid grey;
             border-radius: 5px;
         }
@@ -84,8 +85,8 @@
             padding:10px;
             margin-left: 2px;
            
-            background-color:#7fa467;
-            color:  white;
+            background-color:#7fa46769;
+            color:  #084f49;
             border: 1px solid grey;
             border-radius: 5px;
         }
@@ -160,14 +161,16 @@
         });
 
         document.getElementById('ContinueBtn').addEventListener('click', function() {
-            // storeDataToLocalStorage();
             var e1 = document.getElementById('email').value;
             var p1 = document.getElementById('password').value;
             var e2 = localStorage.getItem('email');
             var p2 = localStorage.getItem('password');
             if(e1===e2 && p1===p2){
                 alert("You have successfully logged in");
-                window.location.href = "home.html";
+                event.preventDefault();
+                // window.location.href = "home.html";
+                window.location.href = "#";
+                // console.log("redirect to the home page")
             }
             else{
                 alert("wrong credential");
@@ -175,27 +178,29 @@
         });
 
         document.getElementById('signUpBtn').addEventListener('click', function() {
-            storeSignupDataToLocalStorage();
+        
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('signup_email').value;
             var pass = document.getElementById("signup_password").value;
             var confPass = document.getElementById("confirm_password").value;
-            if(pass === confPass){
+
+            if(name.length===0 || email.length===0 || pass.length===0 || confPass.length===0){
+                alert("All fields are required");
+            }
+            else if(pass === confPass & pass.length!==0){
+                storeSignupDataToLocalStorage();
                 alert("Sign up successful");
             }
             else{
-                alert("password and confirm password are not matched")
+                alert("passwords do not matched");
+                event.preventDefault();
             }
         });
-
-        // function storeDataToLocalStorage() {
-        //     var email = document.getElementById('email').value;
-        //     localStorage.setItem('email', email);
-        // }
 
         function storeSignupDataToLocalStorage() {
             var name = document.getElementById('name').value;
             var email = document.getElementById('signup_email').value;
             var pass = document.getElementById('signup_password').value;
-            // var confPass = document.getElementById('confirm_password').value;
         
             localStorage.setItem('name', name);
             localStorage.setItem('email', email);
