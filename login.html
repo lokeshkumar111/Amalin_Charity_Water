@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
+        
         /* start login css */
-
         #mainContainer{
             /* background-color: #15614b; */
-            /* width:80%; */
+            /* width:100%; */
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -19,6 +19,7 @@
             margin:auto;
             margin-top: 20px;
             /* border:1px solid grey; */
+            /* background-image: url("https://karnatakaecotourism.com/usrfiles/ban_image-1649748599.jpg"); */
         }
         #imgContainer{
             width:50%;
@@ -27,19 +28,21 @@
             margin: 20px auto;
             /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            border-radius: 30px 0 0 0;
+            border-radius: 50px 0 0 0;
             /* padding: 20px; */
         }
         #imgContainer>img{
             height:100%;
-            border-radius: 30px 0 0 0;
+            width:100%;
+            border-radius: 50px 0 0 0;
+            margin-right: 5px;
         }
         #container {
             width: 50%;
             margin: 20px auto;
             /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            border-radius:  0 0 30px 0;
+            border-radius:  0 0 50px 0;
             padding: 20px;
             background-color: #7dbbab;
             color: #084f49;
@@ -130,13 +133,16 @@
         .underline {
             text-decoration: underline;
         }
+        #lastP{
+            margin-bottom: 32%;
+        }
     </style>
 </head>
 <body>
     <div id="mainContainer">
         <div id="imgContainer">
-            <img src="https://www.mahaecotourism.gov.in/ecotourism/themes/ecotourism/images/man.jpg" alt="man image"/>
-        </div>
+             <img src="https://images.pexels.com/photos/756024/pexels-photo-756024.jpeg?auto=compress&cs=tinysrgb&w=600" alt="man image"/>
+            </div> 
         <div id="container">
             <div id="loginNav">
                 <h3 id="loginTab" class="underline">LOGIN</h3>
@@ -148,7 +154,7 @@
                 <p>Password</p>
                 <input type="password" id="password" placeholder="Password" required>
                 <button id="ContinueBtn">Continue</button>
-                <p>By Continuing, I accept <span>Terms & Conditions</span> and <span>Privacy Policy</span></p>
+                <p id="lastP">By Continuing, I accept <span>Terms & Conditions</span> and <span>Privacy Policy</span></p>
             </form>
             <form id="signup_form" class="hidden">
                 <p>Name</p>
