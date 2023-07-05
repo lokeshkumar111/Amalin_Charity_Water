@@ -9,16 +9,37 @@
 
         #mainContainer{
             /* background-color: #15614b; */
+            /* width:80%; */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
             background-color: white;
-            width:100%;
+            width:58%;
             padding:5px;
-            margin-top: 40px;
+            margin:auto;
+            margin-top: 20px;
+            /* border:1px solid grey; */
+        }
+        #imgContainer{
+            width:50%;
+            display: block;
+            /* width: 25%; */
+            margin: 20px auto;
+            /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            border-radius: 30px 0 0 0;
+            /* padding: 20px; */
+        }
+        #imgContainer>img{
+            height:100%;
+            border-radius: 30px 0 0 0;
         }
         #container {
-            width: 25%;
-            margin: 30px auto;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            border-radius: 5px;
+            width: 50%;
+            margin: 20px auto;
+            /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            border-radius:  0 0 30px 0;
             padding: 20px;
             background-color: #7dbbab;
             color: #084f49;
@@ -113,6 +134,9 @@
 </head>
 <body>
     <div id="mainContainer">
+        <div id="imgContainer">
+            <img src="https://www.mahaecotourism.gov.in/ecotourism/themes/ecotourism/images/man.jpg" alt="man image"/>
+        </div>
         <div id="container">
             <div id="loginNav">
                 <h3 id="loginTab" class="underline">LOGIN</h3>
