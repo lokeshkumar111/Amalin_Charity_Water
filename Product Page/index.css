@@ -1,0 +1,98 @@
+#productPageContainer {
+    border: solid;
+    height: 200px;
+    background-image: url("https://cdn.pixabay.com/photo/2019/07/14/10/48/vineyards-4336787_1280.jpg");
+    width: 100%;
+    padding-bottom: 3%;
+ }
+ .bgDivnext {
+    height: 100%;
+    display: flex;
+    align-items: center;
+ }
+ .dropdownDiv {
+    display: flex;
+    gap: 2%;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    background-color: white;
+    height: 100px;
+ }
+ .topThirdDiv {
+    border: 1px solid;
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+ }
+ .topThirdDiv > img {
+
+    height: 30px;
+    width: 30px;
+ }
+ .topThirdDiv > img > button{
+    background-color: green;
+ }
+
+ #inputforReq {
+    border: none;
+    width: 100%;
+ }
+ .topThirdDiv:nth-child(1) {
+    margin-left: 5%;
+ }
+ .topThirdDiv:last-child {
+    margin-right: 5%;
+ }
+ .topThirdDiv > button {
+    width: 100%;
+    height: 30px;
+ }
+ .instruction {
+    margin-top: 5%;
+    text-align: center;
+    height: 100px;
+    background-color: white;
+ }
+ 
+ /* sider css */
+ .sliderDIv {
+    width: 30%;
+    margin: auto;
+    border: solid;
+ }
+ .slider {
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+ }
+ 
+ .slider img {
+    width: 100%;
+    display: none;
+ }
+ 
+ .slider img.active {
+    display: block;
+ }
+ 
+ .prev-button,
+ .next-button {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+ }
+ 
+ .prev-button {
+    left: 35%;
+ }
+ 
+ .next-button {
+ right : 35%;
+ }
