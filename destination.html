@@ -16,40 +16,213 @@
          flex-direction:column;
          justify-content: right;
          /* background-color: brown; */
+
       }
       #destDiv>div{
+         width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin: 10px auto;
+      justify-content: left;
+      /* margin-left: 0px; */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+      }
+      #destDiv>div>div{
+         width:100%;
+         display: flex;
+         flex-direction: column;
+         margin-left:20px;
+      }
+      #destDiv>div>div>div:first-child{
+         display: flex;
+         flex-direction: row;
+         gap: 100px;
+         justify-content: space-between;
+      }
+      #descDiv{
+         display: flex;
+         flex-direction: column;
+         gap: 0px;
+         margin-top: -20px;
+         margin-bottom: 15px;
+      }
+      #destDiv>div>div>div:first-child>button{
+         font-weight: bold;
+         width: 100%;
+         /* background-color: transparent; */
+         color: green;
+         border-radius: 30px;
+         /* border-color: black; */
+         border:none;
+         height: -1%;
+         margin-top: 5%;
+         margin-left: 20px;
+         text-align: center;
+         padding-inline: 10px;
+         height: fit-content;
+         padding-top: 5px;
+         padding-bottom: 5px;
+         background-color: rgba(0, 128, 0, 0.158);
+         margin-right: 15px;
+      }
+     
+      #destDiv>div:last-child{
+         display: flex;
+         flex-direction: row;
+         gap:20px;
+         justify-content: center;
+         margin-top:15px;
+         margin-bottom:5px;
+         box-shadow:none;
+      }
+      #destDiv>div:last-child>button{
+         padding:10px;
+         border-radius: 5px;
+         background-color: white;
+         color:black;
+         border:1px solid grey;
+         
+
+      }
+      #destDiv>div:last-child>button:hover{
+         background-color: rgba(0, 0, 255, 0.356);
+         /* color:white; */
+         border:1px solid grey;
+
+      }
+
+      img{
          width:50%;
+      }
+   
+     #description{
+      display: flex;
+      flex-direction: column;
+      margin-top: -15px;
+      margin-bottom: 5px;
+      margin-right:15px;
+     }
+     #description>p{
+      margin-top: -10px;
+      width: 100%;
+     }
+     #destDiv>div>div>div:last-child{
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      gap: 10px;
+      margin-right: 15px;
+     }
+     #destDiv>div>div>div:last-child>button{
+         font-weight: bold;
+         width: 100%;
+         border-radius: 30px;
+         border-color: grey;
+         text-align: center;
+         padding:5px 10px 5px 10px;
+     }
+     #destDiv>div>div>div:last-child>button:first-child{
+      color:blue;
+      background-color: rgba(0, 0, 255, 0.205);
+      border: none;
+
+     }
+     #destDiv>div>div>div:last-child>button:first-child:hover{
+      color:white;
+      background-color: blue;
+      border: none;
+      
+     }
+
+     #destDiv>div>div>div:last-child>button:last-child{
+      color:crimson;
+      background-color: rgba(220, 20, 60, 0.233);
+      border: none;
+
+     }
+     #destDiv>div>div>div:last-child>button:last-child:hover{
+      color:white;
+      background-color: crimson;
+      border: none;
+      
+     }
+     #filterDiv{
          display:flex;
          flex-direction: column;
-         margin: 20px auto;
-         justify-content: left;
+         gap: 20px;
+         width:25%;
+         margin-top: 10px;
+         margin-right:15px;
+         margin-left:5px;
+         /* background-color: aqua; */
+         background-image: url("https://cdn.pixabay.com/photo/2022/08/18/06/57/monkey-7394077_640.jpg");
+         background-repeat: no-repeat;
+         background-size: cover;
+         /* filter: blur(8px);
+         -webkit-filter: blur(8px); */
+         margin-bottom:30px; 
+
+         
+      }
+      #filterDiv>label{
+         margin-top: 20px;
+         margin-left:10px;
+         margin-right:10px;
+         color:white;
+         font-weight: bold;
+      }
+      #locationFilter{
+         width:80%;
+         margin-left: 10px;
+         margin-left: 20px;
+         background-color:rgba(0, 0, 255, 0.342);
+         color:white;
+         font-weight: bold;
+      }
+      #priceFilter{
+         width:80%;
+         margin-left: 10px;
+         margin-left: 20px;
+         background-color:rgba(0, 0, 255, 0.342);
+         color:white;
+         font-weight: bold;
+      }
+      #availabilityFilter{
+         width:80%;
+         margin-left: 10px;
+         margin-left: 20px;
+         background-color:rgba(0, 0, 255, 0.342);
+         color:white;
+         font-weight: bold;
+      }
+      #filterDiv>div{
+         display: flex;
+    flex-direction: column;
+    gap: 27px;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 35%;
+      }
+      #filterDiv>div>button{
+         width:max-content;
+         padding:5px 10px 5px 10px;
+         background-color: white;
+         color: black;
+         border:1px solid grey;
+         border-radius: 10px;
 
       }
-      #filterDiv{
-         width:30%;
-         background-color: aqua;
+      #filterDiv>div>button:hover{
+         background-color: blue;
+         color: white;
+         border:none;
+         border-radius: 10px;
       }
-      img{
-         width:100%;
-      }
-      #mainDiv>div:last-child>div>div>div{
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-      }
-      #mainDiv>div:last-child>div>div>div>button{
-        font-weight: bold;
-        width:max-content;
-        background-color: transparent;
-        color:green;
-        border-radius: 50px;
-        border-color: black;
-        height:5%;
-        margin-top: 3.5%;
-        padding:10px;
-        margin-left: 10px;
+         
 
-      }
+
    </style>
 </head>
 <body>
@@ -81,8 +254,10 @@
            <option value="true">Available</option>
         </select>
         <br>
-        <button onclick="applyFilters()">Apply Filters</button>
-        <button onclick="resetFilters()">Reset Filters</button>
+        <div id="filterBtn">
+         <button onclick="applyFilters()">Apply Filters</button>
+         <button onclick="resetFilters()">Reset Filters</button>
+        </div>
      </div>
      
       <div id="destDiv">
@@ -106,35 +281,25 @@ async function getDestData(){
       console.log("Error: fetching in Destination data");
    }
 }
-// const itemsPerPage = 3;
-// let currentPage = 1;
 
-const displayDestData = (data) => {
-   
-   // const startIndex = (currentPage - 1) * itemsPerPage;
-   // const endIndex = startIndex + itemsPerPage;
-   // const destinations = data.slice(startIndex, endIndex);
+const itemsPerPage = 3;
+let currentPage = 1;
 
-   data.forEach(Dest => {
+// const displayDestData = (data) => {
+
+function displayDestData(data) {
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+const destinations = data.slice(startIndex, endIndex);
+
+      destinations.forEach(Dest => {
          
-      // const filterDiv = document.createElement('div')
-      // filterDiv.classList.add('filter-container');
-      // destDiv.appendChild(filterDiv);
 
       const DestDiv = document.createElement('div')
       DestDiv.classList.add('Dest-container');
 
       const image = document.createElement('img');
       image.src = Dest.img1;
-
-    //   for the available button on the top right corner of image
-    //   if (Dest.isAvailable) {
-    //     const availableText = document.createElement('span');
-    //     availableText.textContent = 'Available';
-    //     availableText.classList.add('available');
-    //     image.parentNode.insertBefore(availableText, image.nextSibling);
-    //    }
-
 
       const detailDiv = document.createElement('div')
       const nameDiv = document.createElement('div')
@@ -150,14 +315,19 @@ const displayDestData = (data) => {
     //   detailDiv.appendChild(name);
       detailDiv.appendChild(nameDiv);
 
-      const location = document.createElement('p');
+      const descDiv = document.createElement('div')
+      descDiv.setAttribute("id",'description');
+      const location = document.createElement('h4');
       location.textContent = Dest.location;
-      detailDiv.appendChild(location);
+      descDiv.appendChild(location)
+      // detailDiv.appendChild(location);
 
       const desc = document.createElement('p');
       desc.textContent = Dest.description;
-      detailDiv.appendChild(desc);
+      descDiv.appendChild(desc)
+      // detailDiv.appendChild(desc);
 
+      detailDiv.appendChild(descDiv);
       
       const btnDiv = document.createElement('div')
       var viewDetails=document.createElement("button");
@@ -173,15 +343,34 @@ const displayDestData = (data) => {
          redirectPayment();
       };
       btnDiv.appendChild(bookTicket)
+
+      detailDiv.appendChild(btnDiv)
       
 
       DestDiv.appendChild(image)
       DestDiv.appendChild(detailDiv)
-      DestDiv.appendChild(btnDiv)
-
       destDiv.appendChild(DestDiv);
 
    });
+   // Add pagination buttons
+   const totalPages = Math.ceil(data.length / itemsPerPage);
+   const paginationDiv = document.createElement('div');
+   paginationDiv.classList.add('pagination');
+   for (let i = 1; i <= totalPages; i++) {
+      const pageButton = document.createElement('button');
+      pageButton.textContent = i;
+      if (i === currentPage) {
+         pageButton.classList.add('active');
+      }
+      pageButton.onclick = function() {
+         currentPage = i;
+         destDiv.innerHTML = '';
+         displayDestData(data);
+      };
+      paginationDiv.appendChild(pageButton);
+   }
+
+   destDiv.appendChild(paginationDiv);
 }
 
 // code for the filter part 
