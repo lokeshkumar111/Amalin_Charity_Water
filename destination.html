@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>destinations</title>
+   <style>
+      #mainDiv{
+         width:100%;
+         display: flex;
+         flex-direction: row;
+      }
+      #destDiv{
+         width:70%;
+         display:flex;
+         flex-direction:column;
+         justify-content: right;
+         background-color: brown;
+      }
+      #destDiv>div{
+         width:50%;
+         display:flex;
+         flex-direction: column;
+         margin: 20px auto;
+         justify-content: left;
+
+      }
+      #filterDiv{
+         width:30%;
+         background-color: aqua;
+      }
+      img{
+         width:100%;
+      }
+   </style>
+</head>
+<body>
+   <div id="mainDiv">
+      <div id="filterDiv"></div>
+      <div id="destDiv"></div>
+   </div>
+</body>
+</html>
+<script>
+const destDiv = document.querySelector("#destDiv");
+getDestData();
+async function getDestData(){
+   try {
+
+      const res = await fetch(`https://places-59x7.onrender.com/places`);
+      const data = await res.json();
+      console.log(data);
+      displayDestData(data);
+   } catch (err) {
+      console.log("Error: fetching in Destination data");
+   }
+}
+// const itemsPerPage = 3;
+// let currentPage = 1;
+
+const displayDestData = (data) => {
+   
+   // const startIndex = (currentPage - 1) * itemsPerPage;
+   // const endIndex = startIndex + itemsPerPage;
+   // const destinations = data.slice(startIndex, endIndex);
+
+   data.forEach(Dest => {
+         
+      // const filterDiv = document.createElement('div')
+      // filterDiv.classList.add('filter-container');
+      // destDiv.appendChild(filterDiv);
+
+      const DestDiv = document.createElement('div')
+      DestDiv.classList.add('Dest-container');
+
+      const image = document.createElement('img');
+      image.src = Dest.img1;
+
+      const detailDiv = document.createElement('div')
+      const name = document.createElement('h2');
+      name.textContent = Dest.name;
+      detailDiv.appendChild(name);
+
+      const location = document.createElement('p');
+      location.textContent = Dest.location;
+      detailDiv.appendChild(location);
+
+      const desc = document.createElement('p');
+      desc.textContent = Dest.description;
+      detailDiv.appendChild(desc);
+
+      
+      const btnDiv = document.createElement('div')
+      var viewDetails=document.createElement("button");
+      viewDetails.textContent="View Details";
+      viewDetails.onclick=function(){
+         redirectDetails();
+      };
+      btnDiv.appendChild(viewDetails)
+
+      var bookTicket=document.createElement("button");
+      bookTicket.textContent="Book Ticket";
+      bookTicket.onclick=function(){
+         redirectPayment();
+      };
+      btnDiv.appendChild(bookTicket)
+      
+
+      DestDiv.appendChild(image)
+      DestDiv.appendChild(detailDiv)
+      DestDiv.appendChild(btnDiv)
+
+      destDiv.appendChild(DestDiv);
+
+
+      // // pagination
+      // const totalPages = Math.ceil(data.length / itemsPerPage);
+      // const paginationDiv = document.createElement('div');
+      // paginationDiv.classList.add('pagination');
+      // for (let i = 1; i <= totalPages; i++) {
+      //    const pageButton = document.createElement('button');
+      //    pageButton.textContent = i;
+      //    if (i === currentPage) {
+      //       pageButton.classList.add('active');
+      //    }
+      //    pageButton.onclick = function() {
+      //       currentPage = i;
+      //       destDiv.innerHTML = '';
+      //       displayDestData(data);
+      //    };
+      //    paginationDiv.appendChild(pageButton);
+      // }
+
+      // destDiv.appendChild(paginationDiv);
+   });
+}
+
+</script>
