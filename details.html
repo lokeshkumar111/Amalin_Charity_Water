@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product details</title>
+    <style>
+        /* this is the main Container */
+        #container{
+            display:flex;
+            flex-direction: column;
+            margin: 15px 10px 15px 10px;
+        }
+        /* this is the first Container */
+        #container>div:first-child{
+            display: flex;
+            flex-direction: column;
+            background-image: url("https://karnatakaecotourism.com/usrfiles/img_image-1645612913.webp");
+            /* background-size: center; */
+             background-repeat: no-repeat;
+            background-size: cover;           
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 5px 20px 20px 10px;
+            font-weight: bolder;
+        }
+        #container>div:first-child>div:first-child{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            gap:50px;
+        }
+        #container>div:first-child>div:first-child>button{
+            font-weight: bold;
+            font-stretch: expanded;
+            width: max-content;
+            /* background-color: transparent; */
+            color: green;
+            border-radius: 30px;
+            /* border-color: black; */
+            border: none;
+            height: -1%;
+            margin-top: 15.5px;
+            margin-left: 20px;
+            text-align: center;
+            padding-inline: 40px;
+            height: fit-content;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: rgba(0, 128, 0, 0.158);
+            /* margin-right: 15px;*/
+        }
+        #container>div:first-child>div:last-child{
+            display: flex;
+            flex-direction: column;
+            margin-top: -15px;
+        }
+        #container>div:first-child>div:last-child>p{
+            margin-top: -10px;
+            margin-bottom:40px;
+            letter-spacing: 0.5px;    
+        }
+        #container>div:first-child>div:last-child>div{
+            display:flex;
+            flex-direction: row;
+            justify-content: left;
+            gap:40px;
+        }
+        #container>div:first-child>div:last-child>div>button{
+            font-weight: bold;
+            width: max-content;
+            border-radius: 30px;
+            border-color: grey;
+            text-align: center;
+            /* padding:5px 10px 5px 10px; */
+        }
+        #container>div:first-child>div:last-child>div>button:first-child{
+            color: white;
+            background-color:  blue;
+            border: none;
+            padding: 10px 20px 10px 20px;
+
+        }
+        #container>div:first-child>div:last-child>div>button:last-child{
+            color:crimson;
+            background-color: rgba(220, 20, 60, 0.233);
+            border: none;
+            padding:10px 35px 10px 35px;
+
+        }
+        #container>div:first-child>div:last-child>div>button:last-child:hover{
+            color:white;
+            background-color: crimson;
+            border: none;
+        
+        }
+
+        /* this is the second container */
+        #secondContainer{
+            width:100%;
+            display: flex;
+            flex-direction: row;
+            gap:20px;
+            margin: 40px auto;
+            justify-content: center;
+        }
+        #secondContainer>img{
+            width:23.8%;
+            border-radius: 10px;    
+        }
+        #secondContainer>img:hover{
+            transform: scale(1.05);
+        }
+
+        /* this is the third container */
+        #thirdContainer{
+            width: 97%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+            padding: 5px 20px 20px 10px;
+            border-radius: 10px;
+        }
+        #thirdContainer>div:first-child{
+            margin:auto;
+        }
+        #thirdContainer>div:last-child>p{
+            margin-bottom: 10px;
+            color: grey;
+            line-height: 250%;
+            letter-spacing: 1px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+
+// let id = localStorage.getItem("id")
+let id=1;
+let container = document.getElementById("container")
+  
+apiRequest(id)
+
+async function apiRequest(id) {
+    try {
+        let res = await fetch(`https://places-59x7.onrender.com/places?id=${id}`)
+        let data = await res.json();
+        console.log(data)
+        showDest(data)
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+
+function  showDest(data){
+
+    data.forEach(ele => {
+
+        let firstContainer = document.createElement("div")
+        firstContainer.setAttribute("id", "firstBox")
+        
+        let nameDiv = document.createElement('div')
+        nameDiv.setAttribute("id", "nameDiv");
+
+        let name = document.createElement("h2")
+        name.textContent = ele.name;
+        nameDiv.appendChild(name);
+
+        let available = document.createElement("button");
+        available.setAttribute("id", "available")
+        available.textContent = "Available";
+        nameDiv.appendChild(available);
+
+        firstContainer.appendChild(nameDiv);
+
+        let detailDiv = document.createElement('div');
+        detailDiv.setAttribute("id", "detailDiv");
+
+        let location = document.createElement("h4")
+        location.textContent = ele.location;
+        detailDiv.appendChild(location);
+
+        let desc = document.createElement("p");
+        desc.textContent = ele.description;
+        detailDiv.appendChild(desc)
+
+        let bookDiv = document.createElement("div");
+        let fees = document.createElement("button");
+        fees.textContent = "Ticket charges: Rs. "+ ele.fees + " per person";
+        localStorage.setItem("fees", ele.fees);
+        bookDiv.appendChild(fees);
+
+        let book = document.createElement('button');
+        book.textContent = "Book Ticket";
+        book.addEventListener("click",function(){
+            window.location.href = "Pay.html";   //Add link to the payment page
+        });
+        bookDiv.appendChild(book);
+
+        detailDiv.appendChild(bookDiv);
+
+        firstContainer.appendChild(detailDiv);
+        
+        let secondContainer = document.createElement("div");
+        secondContainer.setAttribute("id", "secondContainer");
+
+        let img1 = document.createElement("img");
+        img1.src = ele.img1;
+        img1.alt = ele.name;
+
+        let img2 = document.createElement("img");
+        img2.src = ele.img2;
+        img2.alt = ele.name;
+
+        let img3 = document.createElement("img");
+        img3.src = ele.img3;
+        img3.alt = ele.name;
+
+        let img4 = document.createElement("img");
+        img4.src = ele.img4;
+        img4.alt = ele.name;
+
+        secondContainer.append(img1, img2, img3, img4);
+
+        let thirdContainer = document.createElement("div");
+        thirdContainer.setAttribute("id", "thirdContainer")
+
+        let headingDiv = document.createElement("div");
+        headingDiv.setAttribute("id", "heading");
+
+        let heading = document.createElement("h1");
+        heading.textContent = "About "+ ele.name;
+        headingDiv.appendChild(heading);
+
+        thirdContainer.appendChild(headingDiv);
+
+        let aboutDiv = document.createElement("div");
+        aboutDiv.setAttribute("id", "aboutDiv");
+
+        let text = document.createElement('p');
+        text.textContent = ele.description + ele.name + " is located about 60 km from "+ ele.location+", and takes just short of two hours to reach the place."+ele.name+" is situated at about 15 km from Doddaballapur. As you reach this location, you are stunned by the stillness of the place. There are hardly any people around and a partly exciting experience to get away from the traffic and noise. It is best advised to carry your own food and water while coming for a day trek in Makalidurga. The highlight of the destination is the Makalidurga fort which lies atop a granite hillock. While the trekking trail here may not be as popular as that of Savandurga, it is nevertheless worth the experience. And the best part is, you won’t find the trek to the top of the hillock too taxing. It is a moderately difficult trek, and with some effort, you can easily climb the barren rocks and boulders. There are some directions on the boulders itself which you would do well to follow. The top of the hill gets you face to face with the ruins of a fort, which is spread across quite an area. The view you get here of the lake which is located just a few km away from the destination is fascinating. And while at the top, don’t miss out on catching a sight of the train meandering through the hills at the bottom of the hill. The sight and sounds are definitely worthy of being caught in your camera."
+       
+        aboutDiv.appendChild(text);
+        
+        thirdContainer.appendChild(aboutDiv);
+
+        
+        container.appendChild(firstContainer);
+        container.appendChild(secondContainer);
+        container.appendChild(thirdContainer);
+
+    });
+}
+</script>
