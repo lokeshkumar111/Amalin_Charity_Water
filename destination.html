@@ -332,16 +332,19 @@ const destinations = data.slice(startIndex, endIndex);
       const btnDiv = document.createElement('div')
       var viewDetails=document.createElement("button");
       viewDetails.textContent="View Details";
-      viewDetails.onclick=function(){
-         redirectDetails();
-      };
+      
+      viewDetails.addEventListener("click",function(){
+         localStorage.setItem("id", Dest.id)
+         window.location.href = "productDetails.html"; //Add link to the details page
+      });
+   
       btnDiv.appendChild(viewDetails)
 
       var bookTicket=document.createElement("button");
       bookTicket.textContent="Book Ticket";
-      bookTicket.onclick=function(){
-         redirectPayment();
-      };
+      bookTicket.addEventListener("click",function(){
+         window.location.href = "Pay.html";   //Add link to the payment page
+      });
       btnDiv.appendChild(bookTicket)
 
       detailDiv.appendChild(btnDiv)
