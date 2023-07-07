@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sticky-header {
+  position:fixed;
+  background-color: #1b283d;
+  padding-bottom: 5px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  
+  
+}
+#login {
+    display: flex;
+    justify-content: end;
+    margin-right: 45px;
+    /* border: 1px solid; */
+    align-items: center;
+}
+#login button {
+  color: white;
+    font-weight: bold;
+  background: none;
+  border: 2px solid;
+    /* background-color: #505050; */
+  border-color: #fff;
+  margin-top: 10px;
+  padding: 5px 10px 5px 10px;
+    /* color: #ccc; */
+    /* border: 1px solid; */   
+}
+#login a :hover {
+    cursor: pointer;
+}
+/* ---------Header---------- */
+#headerpart {
+  margin: -10px;
+  padding: 10px;
+    /* background-color: #505050; */
+}
+/*---------------Navbar-------------- */
+#nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 9px 18px 9px 18px;
+}
+#nav :first-child img {
+    width: 72%;
+    
+}
+#nav2 {
+ 
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 14px 0 0 540px;
+}
+#nav2> a > button {
+    /* background-color: white; */
+      color: white;
+      font-weight: bold;
+    border: none;
+    padding: 9px 18px 9px 18px;
+    background: none;
+    font-family:'Lato', sans-serif; 
+    /* background-color: rgb(249, 217, 35); */
+    gap: 9px;
+    text-decoration: none;
+    border-radius: 5px;
+    /* border: 1px solid; */
+}
+#nav2 > a :hover {
+    cursor: pointer;
+}
+
+#nav :nth-child(4) > a > button {
+    background-color: red;
+    padding:9px 18px 9px 18px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+#nav :nth-child(4) button:hover {
+    cursor: pointer;
+}
+#bgimg > div > img {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+
+}
+    </style>
+</head>
+<body>
+    <header class="sticky-header">
+        <div id="headerpart">
+          
+        <div id="nav">
+            <div>
+                <a href="">
+                    <img src="https://www.karnatakaecotourism.com/assets/images/logo/main-logo.png" alt="">
+                </a>
+            </div>  
+            <div id="nav2">
+                <a href=""><button>Home</button></a>
+                <a href=""><button>Destinations</button></a>
+                <a href=""><button>About Us</button></a>
+      
+                <a href=""><button>Contact Us</button></a>  
+            </div>
+            <!-- <div class="search-bar">
+              <input type="text" id="searchInput" placeholder="Search...">
+              <button onclick="search()">Search</button>
+            </div> -->
+            <div id="login">
+              <a href="">
+                  <button>Login</button>
+              </a>
+          </div>
+        </div>
+        </div>
+      </header>
+</body>
+</html>
