@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product details</title>
     <style>
+        /* this is the main Container */
         #container{
             display:flex;
             flex-direction: column;
             margin: 15px 10px 15px 10px;
         }
+        /* this is the first Container */
         #container>div:first-child{
             display: flex;
             flex-direction: column;
             background-image: url("https://karnatakaecotourism.com/usrfiles/img_image-1645612913.webp");
-/* background-size: center; */
+            /* background-size: center; */
              background-repeat: no-repeat;
             background-size: cover;           
             border-radius: 10px;
@@ -48,7 +50,6 @@
             background-color: rgba(0, 128, 0, 0.158);
             /* margin-right: 15px;*/
         }
-
         #container>div:first-child>div:last-child{
             display: flex;
             flex-direction: column;
@@ -59,7 +60,6 @@
             margin-bottom:40px;
             letter-spacing: 0.5px;    
         }
-
         #container>div:first-child>div:last-child>div{
             display:flex;
             flex-direction: row;
@@ -81,7 +81,6 @@
             padding: 10px 20px 10px 20px;
 
         }
-
         #container>div:first-child>div:last-child>div>button:last-child{
             color:crimson;
             background-color: rgba(220, 20, 60, 0.233);
@@ -96,7 +95,7 @@
         
         }
 
-
+        /* this is the second container */
         #secondContainer{
             width:100%;
             display: flex;
@@ -106,16 +105,16 @@
             justify-content: center;
         }
         #secondContainer>img{
-            width:23%;
+            width:23.8%;
             border-radius: 10px;    
         }
         #secondContainer>img:hover{
             transform: scale(1.05);
         }
 
-
+        /* this is the third container */
         #thirdContainer{
-            width: 91%;
+            width: 97%;
             display: flex;
             flex-direction: column;
             margin: auto;
@@ -129,7 +128,7 @@
         #thirdContainer>div:last-child>p{
             margin-bottom: 10px;
             color: grey;
-            line-height: 200%;
+            line-height: 250%;
             letter-spacing: 1px;
             
         }
@@ -193,7 +192,8 @@ function  showDest(data){
 
         let bookDiv = document.createElement("div");
         let fees = document.createElement("button");
-        fees.textContent = "Charges: Rs. "+ ele.fees + "/person";
+        fees.textContent = "Ticket charges: Rs. "+ ele.fees + " per person";
+        localStorage.setItem("fees", ele.fees);
         bookDiv.appendChild(fees);
 
         let book = document.createElement('button');
