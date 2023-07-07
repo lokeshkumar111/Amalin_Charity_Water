@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>destinations</title>
+   <style>
+      #mainDiv{
+         width:100%;
+         display: flex;
+         flex-direction: row;
+      }
+      #destDiv{
+         width:70%;
+         display:flex;
+         flex-direction:column;
+         justify-content: right;
+         /* background-color: brown; */
+
+      }
+      #destDiv>div{
+         width: 100%;
+      display: flex;
+      flex-direction: row;
+      margin: 10px auto;
+      justify-content: left;
+      /* margin-left: 0px; */
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+      }
+      #destDiv>div>div{
+         width:100%;
+         display: flex;
+         flex-direction: column;
+         margin-left:20px;
+      }
+      #destDiv>div>div>div:first-child{
+         display: flex;
+         flex-direction: row;
+         gap: 100px;
+         justify-content: space-between;
+      }
+      #descDiv{
+         display: flex;
+         flex-direction: column;
+         gap: 0px;
+         margin-top: -20px;
+         margin-bottom: 15px;
+      }
+      #destDiv>div>div>div:first-child>button{
+         font-weight: bold;
+         width: 100%;
+         /* background-color: transparent; */
+         color: green;
+         border-radius: 30px;
+         /* border-color: black; */
+         border:none;
+         height: -1%;
+         margin-top: 5%;
+         margin-left: 20px;
+         text-align: center;
+         padding-inline: 10px;
+         height: fit-content;
+         padding-top: 5px;
+         padding-bottom: 5px;
+         background-color: rgba(0, 128, 0, 0.158);
+         margin-right: 15px;
+      }
+     
+      #destDiv>div:last-child{
+         display: flex;
+         flex-direction: row;
+         gap:20px;
+         justify-content: center;
+         margin-top:15px;
+         margin-bottom:5px;
+         box-shadow:none;
+      }
+      #destDiv>div:last-child>button{
+         padding:10px;
+         border-radius: 5px;
+         background-color: white;
+         color:black;
+         border:1px solid grey;
+         
+
+      }
+      #destDiv>div:last-child>button:hover{
+         background-color: rgba(0, 0, 255, 0.356);
+         /* color:white; */
+         border:1px solid grey;
+
+      }
+
+      img{
+         width:50%;
+      }
+   
+     #description{
+      display: flex;
+      flex-direction: column;
+      margin-top: -15px;
+      margin-bottom: 5px;
+      margin-right:15px;
+     }
+     #description>p{
+      margin-top: -10px;
+      width: 100%;
+     }
+     #destDiv>div>div>div:last-child{
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      gap: 10px;
+      margin-right: 15px;
+     }
+     #destDiv>div>div>div:last-child>button{
+         font-weight: bold;
+         width: 100%;
+         border-radius: 30px;
+         border-color: grey;
+         text-align: center;
+         padding:5px 10px 5px 10px;
+     }
+     #destDiv>div>div>div:last-child>button:first-child{
+      color:blue;
+      background-color: rgba(0, 0, 255, 0.205);
+      border: none;
+
+     }
+     #destDiv>div>div>div:last-child>button:first-child:hover{
+      color:white;
+      background-color: blue;
+      border: none;
+      
+     }
+
+     #destDiv>div>div>div:last-child>button:last-child{
+      color:crimson;
+      background-color: rgba(220, 20, 60, 0.233);
+      border: none;
+
+     }
+     #destDiv>div>div>div:last-child>button:last-child:hover{
+      color:white;
+      background-color: crimson;
+      border: none;
+      
+     }
+     #filterDiv{
+         display:flex;
+         flex-direction: column;
+         gap: 20px;
+         width:25%;
+         margin-top: 10px;
+         margin-right:15px;
+         margin-left:5px;
+         /* background-color: aqua; */
+         background-image: url("https://cdn.pixabay.com/photo/2022/08/18/06/57/monkey-7394077_640.jpg");
+         background-repeat: no-repeat;
+         background-size: cover;
+         /* filter: blur(8px);
+         -webkit-filter: blur(8px); */
+         margin-bottom:30px; 
+
+         
+      }
+      #filterDiv>label{
+         margin-top: 20px;
+         margin-left:10px;
+         margin-right:10px;
+         color:white;
+         font-weight: bold;
+      }
+      #locationFilter{
+         width:80%;
+         margin-left: 10px;
+         margin-left: 20px;
+         background-color:rgba(0, 0, 255, 0.342);
+         color:white;
+         font-weight: bold;
+      }
+      #priceFilter{
+         width:80%;
+         margin-left: 10px;
+         margin-left: 20px;
+         background-color:rgba(0, 0, 255, 0.342);
+         color:white;
+         font-weight: bold;
+      }
+      #availabilityFilter{
+         width:80%;
+         margin-left: 10px;
+         margin-left: 20px;
+         background-color:rgba(0, 0, 255, 0.342);
+         color:white;
+         font-weight: bold;
+      }
+      #filterDiv>div{
+         display: flex;
+    flex-direction: column;
+    gap: 27px;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 35%;
+      }
+      #filterDiv>div>button{
+         width:max-content;
+         padding:5px 10px 5px 10px;
+         background-color: white;
+         color: black;
+         border:1px solid grey;
+         border-radius: 10px;
+
+      }
+      #filterDiv>div>button:hover{
+         background-color: blue;
+         color: white;
+         border:none;
+         border-radius: 10px;
+      }
+         
+
+
+   </style>
+</head>
+<body>
+   <div id="mainDiv">
+    <div id="filterDiv">
+        <label for="locationFilter">Filter by Location:</label>
+        <select id="locationFilter">
+           <option value="">All</option>
+           <option value="Kolar">Kolar</option>
+           <option value="Doddaballapura">Doddaballapura</option>
+           <option value="Chikkaballapura">Chikkaballapura</option>
+           <option value="Tumkur">Tumkur</option>
+           <option value="Bengaluru">Bengaluru</option>
+           <option value="Belagavi">Belagavi</option>
+           <option value="Bellary">Bellary</option>
+        </select>
+        <br>
+        <label for="priceFilter">Filter by Price:</label>
+        <select id="priceFilter">
+           <option value="">All</option>
+           <option value="300">Under 300 Rs</option>
+           <option value="350">Under 350 Rs</option>
+           <option value="400">Under 400 Rs</option>
+        </select>
+        <br>
+        <label for="availabilityFilter">Filter by Availability:</label>
+        <select id="availabilityFilter">
+           <option value="">All</option>
+           <option value="true">Available</option>
+        </select>
+        <br>
+        <div id="filterBtn">
+         <button onclick="applyFilters()">Apply Filters</button>
+         <button onclick="resetFilters()">Reset Filters</button>
+        </div>
+     </div>
+     
+      <div id="destDiv">
+
+      </div>
+   </div>
+</body>
+</html>
+<script>
+    let data;
+const destDiv = document.querySelector("#destDiv");
+getDestData();
+async function getDestData(){
+   try {
+
+      const res = await fetch(`https://places-59x7.onrender.com/places`);
+      data = await res.json();
+      console.log(data);
+      displayDestData(data);
+   } catch (err) {
+      console.log("Error: fetching in Destination data");
+   }
+}
+
+const itemsPerPage = 3;
+let currentPage = 1;
+
+// const displayDestData = (data) => {
+
+function displayDestData(data) {
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+const destinations = data.slice(startIndex, endIndex);
+
+      destinations.forEach(Dest => {
+         
+
+      const DestDiv = document.createElement('div')
+      DestDiv.classList.add('Dest-container');
+
+      const image = document.createElement('img');
+      image.src = Dest.img1;
+
+      const detailDiv = document.createElement('div')
+      const nameDiv = document.createElement('div')
+      const name = document.createElement('h2');
+      name.textContent = Dest.name;
+      nameDiv.appendChild(name);  
+
+      const available = document.createElement('button');
+      available.setAttribute("id", "available");
+      available.textContent = "Available";
+      nameDiv.appendChild(available);
+      
+    //   detailDiv.appendChild(name);
+      detailDiv.appendChild(nameDiv);
+
+      const descDiv = document.createElement('div')
+      descDiv.setAttribute("id",'description');
+      const location = document.createElement('h4');
+      location.textContent = Dest.location;
+      descDiv.appendChild(location)
+      // detailDiv.appendChild(location);
+
+      const desc = document.createElement('p');
+      desc.textContent = Dest.description;
+      descDiv.appendChild(desc)
+      // detailDiv.appendChild(desc);
+
+      detailDiv.appendChild(descDiv);
+      
+      const btnDiv = document.createElement('div')
+      var viewDetails=document.createElement("button");
+      viewDetails.textContent="View Details";
+      
+      viewDetails.addEventListener("click",function(){
+         localStorage.setItem("id", Dest.id)
+         window.location.href = "productDetails.html"; //Add link to the details page
+      });
+   
+      btnDiv.appendChild(viewDetails)
+
+      var bookTicket=document.createElement("button");
+      bookTicket.textContent="Book Ticket";
+      bookTicket.addEventListener("click",function(){
+         window.location.href = "Pay.html";   //Add link to the payment page
+      });
+      btnDiv.appendChild(bookTicket)
+
+      detailDiv.appendChild(btnDiv)
+      
+
+      DestDiv.appendChild(image)
+      DestDiv.appendChild(detailDiv)
+      destDiv.appendChild(DestDiv);
+
+   });
+   // Add pagination buttons
+   const totalPages = Math.ceil(data.length / itemsPerPage);
+   const paginationDiv = document.createElement('div');
+   paginationDiv.classList.add('pagination');
+   for (let i = 1; i <= totalPages; i++) {
+      const pageButton = document.createElement('button');
+      pageButton.textContent = i;
+      if (i === currentPage) {
+         pageButton.classList.add('active');
+      }
+      pageButton.onclick = function() {
+         currentPage = i;
+         destDiv.innerHTML = '';
+         displayDestData(data);
+      };
+      paginationDiv.appendChild(pageButton);
+   }
+
+   destDiv.appendChild(paginationDiv);
+}
+
+// code for the filter part 
+const locationFilter = document.getElementById('locationFilter');
+const priceFilter = document.getElementById('priceFilter');
+const availabilityFilter = document.getElementById('availabilityFilter');
+
+function applyFilters() {
+   const filteredData = data.filter(Dest => {
+      const locationValue = locationFilter.value;
+      const priceValue = priceFilter.value;
+      const availabilityValue = availabilityFilter.value;
+
+      // Filter by location
+      if (locationValue && Dest.location !== locationValue) {
+         return false;
+      }
+
+      // Filter by price
+      if (priceValue && Dest.price > parseInt(priceValue)) {
+         return false;
+      }
+
+      // Filter by availability
+      if (availabilityValue && Dest.isAvailable.toString() !== availabilityValue) {
+         return false;
+      }
+
+      return true;
+   });
+
+   destDiv.innerHTML = '';
+   displayDestData(filteredData);
+}
+
+function resetFilters() {
+   locationFilter.value = '';
+   priceFilter.value = '';
+   availabilityFilter.value = '';
+   destDiv.innerHTML = '';
+   displayDestData(data);
+}
+
+
+</script>
