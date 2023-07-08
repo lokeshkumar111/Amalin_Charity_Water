@@ -242,7 +242,7 @@ function paynow()
     if (person == "1234") {
       alert("Your Payment is succesfull of  ₹"+ "350"  +" and your ticket is booked");
       paymentDone();
-      window.location.href = "Homepage.html";
+      window.location.href = "index.html";
     } else {
       alert("Wrong OTP, Try Again");
     }
