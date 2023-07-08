@@ -40,9 +40,9 @@ const displayDestData = (data) => {
 
      var bookTicket=document.createElement("button");
      bookTicket.textContent="Book Ticket";
-    //  bookTicket.onclick=function(){
-    //     // redirectPayment();
-    //  };
+     bookTicket.onclick=function(){
+        redirectPayment();
+     };
     
   
      DestDiv.appendChild(image)
@@ -52,6 +52,10 @@ const displayDestData = (data) => {
      destDiv.appendChild(DestDiv);
 
    });
+}
+
+function redirectPayment(){
+  window.location.href = "pay.html";
 }
 
 
@@ -86,4 +90,14 @@ const swiper = new Swiper('.swiper', {
   
 
   });
+
+
+// to show user's name in place of login button
+var n = localStorage.getItem("name");
+console.log(n);
+var loginBtnText = document.getElementById("loginBtn");
+if(n.length!==0){
+  loginBtnText.textContent = n;
+}
+
 // -------------------------------------

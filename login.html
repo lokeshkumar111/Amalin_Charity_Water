@@ -5,6 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <style>
+         *{
+         font-family:'Lato', sans-serif;
+      }
+        /* --------navbar css start--------- */
+        .sticky-header {
+            position:fixed;
+            background-color: #1b283d;
+            padding-bottom: 5px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        
+        }
+        #login {
+            display: flex;
+            justify-content: end;
+            margin-right: 45px;
+            /* border: 1px solid; */
+            align-items: center;
+        }
+        #login button {
+            width:max-content;
+            color: white;
+            font-weight: bold;
+            background: none;
+            border: 2px solid;
+                /* background-color: #505050; */
+            border-color: #fff;
+            margin-top: 10px;
+            padding: 5px 10px 5px 10px;
+                /* color: #ccc; */
+                /* border: 1px solid; */   
+        }
+        #login a :hover {
+            cursor: pointer;
+        }
+        /* ---------Header---------- */
+        #headerpart {
+            margin: -10px;
+            padding: 10px;
+                /* background-color: #505050; */
+        }
+        /*---------------Navbar-------------- */
+        #nav {
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            padding: 9px 18px 9px 18px;
+        }
+        #nav :first-child img {
+            width: 72%;
+            
+        }
+        #nav2 {
+        
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            margin: 14px 0 0 540px;
+        }
+        #nav2> a > button {
+            /* background-color: white; */
+            color: white;
+            font-weight: bold;
+            border: none;
+            padding: 9px 18px 9px 18px;
+            background: none;
+            font-family:'Lato', sans-serif; 
+            /* background-color: rgb(249, 217, 35); */
+            gap: 9px;
+            text-decoration: none;
+            border-radius: 5px;
+            /* border: 1px solid; */
+        }
+        #nav2 > a :hover {
+            cursor: pointer;
+        }
+
+        #nav :nth-child(4) > a > button {
+            background-color: red;
+            padding:9px 18px 9px 18px;
+            color: white;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #nav :nth-child(4) button:hover {
+            cursor: pointer;
+        }
+        #bgimg > div > img {
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+
+        }
+        /* ------- navbar css end----------- */
         
         /* start login css */
         #mainContainer{
@@ -17,7 +116,7 @@
             width:58%;
             padding:5px;
             margin:auto;
-            margin-top: 20px;
+            margin-top: 80px;
             /* border:1px solid grey; */
             /* background-image: url("https://karnatakaecotourism.com/usrfiles/ban_image-1649748599.jpg"); */
         }
@@ -28,13 +127,13 @@
             margin: 20px auto;
             /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            border-radius: 50px 0 0 0;
+            border-radius: 100px 0 0 0;
             /* padding: 20px; */
         }
         #imgContainer>img{
             height:100%;
             width:100%;
-            border-radius: 50px 0 0 0;
+            border-radius: 100px 0 0 0;
             margin-right: 5px;
         }
         #container {
@@ -42,15 +141,17 @@
             margin: 20px auto;
             /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            border-radius:  0 0 50px 0;
+            border-radius:  0 0 100px 0;
             padding: 20px;
-            background-color: #7dbbab;
-            color: #084f49;
+            /* background-color: #7dbbab; */
+            /* color: #084f49; */
+            background-color:#10213a;
+            color:white;
         }
 
         #container>h3 {
             text-align: center;
-            color:#084f49;
+            /* color:#084f49; */
             margin-bottom: 30px;
         }
 
@@ -58,7 +159,7 @@
             text-align: left;
             margin: 8px 0;
             font-size: 15px;
-            font-weight: bold;
+            /* font-weight: bold; */
         }
 
         #container>form>input {
@@ -74,49 +175,53 @@
 
         #container>p {
             font-size: 15px;
-            font-weight: bold;
+            /* font-weight: bold; */
             margin-top: 10px;
         }
 
         #container>form>p>span:first-child {
-            color: blue;
+            color: green;
         }
 
         #container>form>p>span:nth-child(2) {
-            color: blue;
+            color: green;
         }
         #ContinueBtn{
-            font-weight: bold;
+            /* font-weight: bold; */
             width: 100%;
             margin-top: 20px;
             padding:10px;
             margin-left: 2px;
            
-            background-color:#7fa46769;
-            color:  #084f49;
-            border: 1px solid grey;
+            /* background-color:rgba(10, 107, 10, 0.726); */
+            background-color: transparent;
+            color: white;
+            /* border: none; */
             border-radius: 5px;
+            border: 1px solid white;
         }
         #ContinueBtn:hover {
-            background-color: #084f4941;
-            color: #084f49;
+            background-color:rgba(4, 253, 4, 0.37);
+            color: white;
+            border:none;
         }
 
         #signUpBtn{
-            font-weight: bold;
+            /* font-weight: bold; */
             width: 100%;
             margin-top: 20px;
             padding:10px;
             margin-left: 2px;
            
-            background-color:#7fa46769;
-            color:  #084f49;
-            border: 1px solid grey;
+            background-color:transparent;
+            color: white;
+            border: 1px solid white;
             border-radius: 5px;
         }
         #signUpBtn:hover {
-            background-color: #084f4941;
-            color: #084f49;
+            background-color:rgba(4, 253, 4, 0.37);
+            color: white;
+            border:none;
         }
 
         #container>div{
@@ -136,9 +241,191 @@
         #lastP{
             margin-bottom: 32%;
         }
+
+        /* --------footer style start--------- */
+
+                hr {
+        margin-left: -100px;
+        }
+        #footerupper {
+        padding: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        padding-left: 100px;
+        padding-right: 100px;
+        /* align-items: center; */
+        }
+        #footerupper img {
+        width: 14%;
+        }
+        #footerupper p {
+        color: #b5b6b8;
+        padding-left: 72px;
+        font-size: medium;
+        font-family:'Lato', sans-serif;
+        /* padding-top: -20px; */
+        
+        }
+        #footer_links {
+        display: flex;
+        /* grid-template-columns: repeat(6,1fr); */
+        color: #d2d2d2;
+        margin: auto;
+        gap: 50px;
+        margin-left: 100px;
+        margin-right: 100px;
+        padding-bottom: 45px  ;
+        /* border: 1px solid; */
+        justify-content: space-between;
+        }
+        #footer_links h3 {
+        font-family:'Lato', sans-serif;
+        padding-bottom: 10px;
+        font-size: medium;
+        }
+        #footer_links p {
+        font-family:'Lato', sans-serif;
+        height: 25px;
+        font-size: smaller;
+        /* width: 250px; */
+        padding: 5px;
+        /* margin: 5px; */
+        /* align-items: center; */
+        /* text-align: left; */
+        }
+        #footer_links p:hover {
+        /* background-color: lightgray; */
+        cursor: pointer;
+        }
+        #last {
+        margin-top: 45px;
+
+        }
+        #in {
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        #last1 {
+        display: flex;
+        /* border: 1px solid; */
+        } 
+        #last1 > img {
+        margin-top: 10px;
+        width: 100px;
+        }
+        #lastline {
+        margin-left: 100px;
+        font-family:'Lato', sans-serif;
+        }
+
+        #logo {
+            padding-top: 18px;
+            display: flex;
+            margin-left: 100px;
+            gap: 36px;
+        }
+        #end {
+            display: flex;
+            margin-left: 100px;
+            margin-right: 100px;
+            color: #90a491;
+            font-family:'Lato', sans-serif;
+            justify-content: space-between;
+        }
+
+        #Lgradient {
+            /* margin: -14px; */
+            /* padding-left: 100px; */
+            /* padding-right: -45px; */
+            padding-bottom: 63px;
+            /* border: 1px solid; */
+            /* padding-top: 63px; */
+            width: 100%;
+            height: 530px;
+            background-color: #1b283d;
+            /* background-image: linear-gradient(#ffffff, #a1dcdd); */
+        }
+
+        @media (max-width: 700px) {
+            #Lgradient {
+                margin: 0;
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 63px;
+                /* border: 1px solid; */
+                /* padding-top: 63px; */
+                width: 100%;
+                height: 1500px;
+                background-image: linear-gradient(#ffffff, #a1dcdd);
+            }
+            #footer_links {
+                display: grid;
+                /* grid-template-columns: repeat(6,1fr); */
+                margin: auto;
+                gap: 50px;
+                margin-left: 20px;
+                margin-right: 200px;
+                padding-bottom: 45px  ;
+                /* border: 1px solid; */
+                justify-content: space-between;
+            }
+            #logo {
+                width: 23%;
+                padding-top: 18px;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                margin-left: 20px;
+                gap: 27px;
+            }
+            #footerupper {
+                display: none;
+            }
+            #end {
+                display: none;
+            }
+            #lastline {
+                display: none;
+            }
+        }
+
+        /* ----------footer style end---------- */
     </style>
 </head>
 <body>
+    <!-- header -->
+
+    <header class="sticky-header">
+        <div id="headerpart">
+          
+        <div id="nav">
+            <div>
+                <a href="">
+                    <img src="https://www.karnatakaecotourism.com/assets/images/logo/main-logo.png" alt="">
+                </a>
+            </div>  
+            <div id="nav2">
+                <a href="Homepage.html"><button>Home</button></a>
+                <a href="destination.html"><button>Destinations</button></a>
+                <a href=""><button>About Us</button></a>
+      
+                <a href=""><button>Contact Us</button></a>  
+            </div>
+            <!-- <div class="search-bar">
+              <input type="text" id="searchInput" placeholder="Search...">
+              <button onclick="search()">Search</button>
+            </div> -->
+            <div id="login">
+              <a href="login.html">
+                  <button id="loginBtn">Login</button>
+              </a>
+          </div>
+        </div>
+        </div>
+      </header>
+
+    <!-- header end -->
     <div id="mainContainer">
         <div id="imgContainer">
              <img src="https://images.pexels.com/photos/756024/pexels-photo-756024.jpeg?auto=compress&cs=tinysrgb&w=600" alt="man image"/>
@@ -154,7 +441,7 @@
                 <p>Password</p>
                 <input type="password" id="password" placeholder="Password" required>
                 <button id="ContinueBtn">Continue</button>
-                <p id="lastP">By Continuing, I accept <span>Terms & Conditions</span> and <span>Privacy Policy</span></p>
+                <p id="lastP">By Continuing, I accept <span>Terms & Conditions</span> and <span> Privacy Policy</span></p>
             </form>
             <form id="signup_form" class="hidden">
                 <p>Name</p>
@@ -169,73 +456,151 @@
             </form>
         </div>
     </div>
+    <!-- footer code start -->
 
-    <script>
-        var loginTab = document.getElementById('loginTab');
-        var signupTab = document.getElementById('signupTab');
-        var loginForm = document.getElementById('login_form');
-        var signupForm = document.getElementById('signup_form');
+    <div id="Lgradient">
+        <hr>  
+        <br>
+      <div id="footerupper">
+        <img src="https://www.karnatakaecotourism.com/assets/images/logo/main-logo.png" alt="">
+        <p>"Ecotourism promotes sustainable travel, emphasizing nature conservation, local community involvement, and environmental education, fostering a positive impact on both the environment and communities."</p>
+      </div>
+      <hr>
+      <br>
+        <div id="footer_links">
+          <div>
+            <h3>COMPANY</h3>
+            <p>About Ecotourism</p>
+            <p>Customers Speak</p>
+            <p>In the News</p>
+            <p>Terms and Conditions</p>
+            <p>Privacy Policy</p>
+            <p>Contact</p>
+          </div>
+          <div>
+            <h3>Travelling</h3>
+            <p>Browse by Manufacturers</p>
+            <p>Health Articles</p>
+            <p>Offers / Coupons</p>
+            <p>FAQs</p>
+          </div>
+          <div>
+            <h3>BUSINESS</h3>
+            <p>Franchise</p>
+          </div>
+          <div>
+            <h3>CATEGORIES</h3>
+            <p>Tourist</p>
+            <p>Place</p>
+            <p>Family pack</p>
+            <p>Famouse</p>
+            <p>Spiritual</p>
+            <p>South part</p>
+            <p>North part</p>
+          </div>
+          <div>
+            <h3>SOCIAL</h3>
+            <p>Travelling media</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>LinkedIn</p>
+            <p>Youtube</p>
+            <p>Refer & Earn</p>
+          </div>
+          <div>
+            <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+            <p>Get a free subscription to our Travelling updates and <br> Coupons for 50% off for next trip.</p>
+            <div id="last">
+              <input type="text" placeholder="Enter your email address" id="in">
+            </div>
+            <hr>
+            <div id="last1">
+              <img src="https://www.netmeds.com/assets/gloryweb/images/icons/play_store.png" alt="">
+              <img src="https://www.netmeds.com/assets/gloryweb/images/icons/app_store.png" alt="">
+          </div>  
+          </div>
+         
+          </div>
+          
+        </div>
 
-        loginTab.addEventListener('click', function() {
-            loginTab.classList.add('underline');
-            signupTab.classList.remove('underline');
-            loginForm.classList.remove('hidden');
-            signupForm.classList.add('hidden');
-        });
-
-        signupTab.addEventListener('click', function() {
-            signupTab.classList.add('underline');
-            loginTab.classList.remove('underline');
-            signupForm.classList.remove('hidden');
-            loginForm.classList.add('hidden');
-        });
-
-        document.getElementById('ContinueBtn').addEventListener('click', function() {
-            var e1 = document.getElementById('email').value;
-            var p1 = document.getElementById('password').value;
-            var e2 = localStorage.getItem('email');
-            var p2 = localStorage.getItem('password');
-            if(e1===e2 && p1===p2){
-                alert("You have successfully logged in");
-                event.preventDefault();
-                // window.location.href = "home.html";
-                window.location.href = "#";
-                // console.log("redirect to the home page")
-            }
-            else{
-                alert("wrong credential");
-            }
-        });
-
-        document.getElementById('signUpBtn').addEventListener('click', function() {
-        
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('signup_email').value;
-            var pass = document.getElementById("signup_password").value;
-            var confPass = document.getElementById("confirm_password").value;
-
-            if(name.length===0 || email.length===0 || pass.length===0 || confPass.length===0){
-                alert("All fields are required");
-            }
-            else if(pass === confPass & pass.length!==0){
-                storeSignupDataToLocalStorage();
-                alert("Sign up successful");
-            }
-            else{
-                alert("passwords do not matched");
-                event.preventDefault();
-            }
-        });
-
-        function storeSignupDataToLocalStorage() {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('signup_email').value;
-            var pass = document.getElementById('signup_password').value;
-        
-            localStorage.setItem('name', name);
-            localStorage.setItem('email', email);
-            localStorage.setItem('password', pass);
-        }
-    </script>
+    <!-- footer code end -->
 </body>
 </html>
+
+<script>
+    var loginTab = document.getElementById('loginTab');
+    var signupTab = document.getElementById('signupTab');
+    var loginForm = document.getElementById('login_form');
+    var signupForm = document.getElementById('signup_form');
+
+    loginTab.addEventListener('click', function() {
+        loginTab.classList.add('underline');
+        signupTab.classList.remove('underline');
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+    });
+
+    signupTab.addEventListener('click', function() {
+        signupTab.classList.add('underline');
+        loginTab.classList.remove('underline');
+        signupForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+    });
+
+    document.getElementById('ContinueBtn').addEventListener('click', function() {
+        var e1 = document.getElementById('email').value;
+        var p1 = document.getElementById('password').value;
+        var e2 = localStorage.getItem('email');
+        var p2 = localStorage.getItem('password');
+        if(e1===e2 && p1===p2){
+            alert("You have successfully logged in");
+            event.preventDefault();
+            // window.location.href = "home.html";
+            window.location.href = "Homepage.html";
+            // console.log("redirect to the home page")
+        }
+        else{
+            alert("wrong credential");
+        }
+    });
+
+    document.getElementById('signUpBtn').addEventListener('click', function() {
+    
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('signup_email').value;
+        var pass = document.getElementById("signup_password").value;
+        var confPass = document.getElementById("confirm_password").value;
+
+        if(name.length===0 || email.length===0 || pass.length===0 || confPass.length===0){
+            alert("All fields are required");
+        }
+        else if(pass === confPass & pass.length!==0){
+            storeSignupDataToLocalStorage();
+            alert("Sign up successful");
+        }
+        else{
+            alert("passwords do not matched");
+            event.preventDefault();
+        }
+    });
+
+    function storeSignupDataToLocalStorage() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('signup_email').value;
+        var pass = document.getElementById('signup_password').value;
+    
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', pass);
+    }
+
+
+    // // to show user's name in place of login button
+    // var n = localStorage.getItem("name");
+    // console.log(n);
+    // var loginBtnText = document.getElementById("loginBtn");
+    // if(n.length!==0){
+    // loginBtnText.textContent = n;
+    // }
+</script>

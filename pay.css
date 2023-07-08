@@ -1,9 +1,259 @@
 /* Add some basic styles */
+*{
+    font-family:'Lato', sans-serif;
+ }
+ /* --------navbar css start--------- */
+ .sticky-header {
+    position:fixed;
+    background-color: #1b283d;
+    padding-bottom: 5px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+
+}
+#login {
+    display: flex;
+    justify-content: end;
+    margin-right: 45px;
+    /* border: 1px solid; */
+    align-items: center;
+}
+#login button {
+    width: max-content;
+    color: white;
+    font-weight: bold;
+    background: none;
+    border: 2px solid;
+        /* background-color: #505050; */
+    border-color: #fff;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+        /* color: #ccc; */
+        /* border: 1px solid; */   
+}
+#login a :hover {
+    cursor: pointer;
+}
+/* ---------Header---------- */
+#headerpart {
+    margin: -10px;
+    padding: 10px;
+        /* background-color: #505050; */
+}
+/*---------------Navbar-------------- */
+#nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 9px 18px 9px 18px;
+}
+#nav :first-child img {
+    width: 72%;
+    
+}
+#nav2 {
+
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 14px 0 0 540px;
+}
+#nav2> a > button {
+    /* background-color: white; */
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 9px 18px 9px 18px;
+    background: none;
+    font-family:'Lato', sans-serif; 
+    /* background-color: rgb(249, 217, 35); */
+    gap: 9px;
+    text-decoration: none;
+    border-radius: 5px;
+    /* border: 1px solid; */
+}
+#nav2 > a :hover {
+    cursor: pointer;
+}
+
+#nav :nth-child(4) > a > button {
+    background-color: red;
+    padding:9px 18px 9px 18px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+#nav :nth-child(4) button:hover {
+    cursor: pointer;
+}
+#bgimg > div > img {
+width: 100%;
+display: block;
+margin-left: auto;
+margin-right: auto;
+
+
+}
+/* ------- navbar css end----------- */
+
+ /* --------footer style start--------- */
+
+ hr {
+    margin-left: -100px;
+    }
+    #footerupper {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+    /* align-items: center; */
+    }
+    #footerupper img {
+    width: 14%;
+    }
+    #footerupper p {
+    color: #b5b6b8;
+    padding-left: 72px;
+    font-size: medium;
+    font-family:'Lato', sans-serif;
+    /* padding-top: -20px; */
+    
+    }
+    #footer_links {
+    display: flex;
+    /* grid-template-columns: repeat(6,1fr); */
+    color: #d2d2d2;
+    margin: auto;
+    gap: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-bottom: 45px  ;
+    /* border: 1px solid; */
+    justify-content: space-between;
+    }
+    #footer_links h3 {
+    font-family:'Lato', sans-serif;
+    padding-bottom: 10px;
+    font-size: medium;
+    }
+    #footer_links p {
+    font-family:'Lato', sans-serif;
+    height: 25px;
+    font-size: smaller;
+    /* width: 250px; */
+    padding: 5px;
+    /* margin: 5px; */
+    /* align-items: center; */
+    /* text-align: left; */
+    }
+    #footer_links p:hover {
+    /* background-color: lightgray; */
+    cursor: pointer;
+    }
+    #last {
+    margin-top: 45px;
+
+    }
+    #in {
+        padding: 14px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    #last1 {
+    display: flex;
+    /* border: 1px solid; */
+    } 
+    #last1 > img {
+    margin-top: 10px;
+    width: 100px;
+    }
+    #lastline {
+    margin-left: 100px;
+    font-family:'Lato', sans-serif;
+    }
+
+    #logo {
+        padding-top: 18px;
+        display: flex;
+        margin-left: 100px;
+        gap: 36px;
+    }
+    #end {
+        display: flex;
+        margin-left: 100px;
+        margin-right: 100px;
+        color: #90a491;
+        font-family:'Lato', sans-serif;
+        justify-content: space-between;
+    }
+
+    #Lgradient {
+        /* margin: -14px; */
+        /* padding-left: 100px; */
+        /* padding-right: -45px; */
+        padding-bottom: 63px;
+        /* border: 1px solid; */
+        /* padding-top: 63px; */
+        width: 100%;
+        height: 530px;
+        background-color: #1b283d;
+        /* background-image: linear-gradient(#ffffff, #a1dcdd); */
+    }
+
+    @media (max-width: 700px) {
+        #Lgradient {
+            margin: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 63px;
+            /* border: 1px solid; */
+            /* padding-top: 63px; */
+            width: 100%;
+            height: 1500px;
+            background-image: linear-gradient(#ffffff, #a1dcdd);
+        }
+        #footer_links {
+            display: grid;
+            /* grid-template-columns: repeat(6,1fr); */
+            margin: auto;
+            gap: 50px;
+            margin-left: 20px;
+            margin-right: 200px;
+            padding-bottom: 45px  ;
+            /* border: 1px solid; */
+            justify-content: space-between;
+        }
+        #logo {
+            width: 23%;
+            padding-top: 18px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            margin-left: 20px;
+            gap: 27px;
+        }
+        #footerupper {
+            display: none;
+        }
+        #end {
+            display: none;
+        }
+        #lastline {
+            display: none;
+        }
+    }
+
+    /* ----------footer style end---------- */
 #parent {
-    padding: 30px;
-    margin-top: 30px;
+    padding: 10px;
+    margin-top: 100px;
     margin-left: 30px;
     margin-right: 30px;
+    margin-bottom: 50px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     border-radius: 10px;
 }
@@ -83,6 +333,7 @@ body {
     display: flex;
     width: 50%;
     margin-left: 8%;
+    /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
 }
 
 #payment-price>h2 {
@@ -96,6 +347,7 @@ body {
     margin-left: 8%;
     border-radius: 2px;
     height: 500px;
+    /* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
 }
 
 #left-payment-mode {

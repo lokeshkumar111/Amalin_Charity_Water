@@ -155,13 +155,13 @@ paymentDebitButton.addEventListener("click", () => {
 })*/
 
  
-document.getElementById("paynow-button").addEventListener("click", function () {
-    window.location.href = "paymentsuccessful.html";
-});
+// document.getElementById("paynow-button").addEventListener("click", function () {
+//     window.location.href = "paymentsuccessful.html";
+// });
 
-document.getElementById("verify-button").addEventListener("click", function () {
-    window.location.href = "paymentsuccessful.html";
-});
+// document.getElementById("verify-button").addEventListener("click", function () {
+//     window.location.href = "paymentsuccessful.html";
+// });
 
 
 
@@ -236,11 +236,13 @@ function paynow()
     }
   
     var person = prompt("Please enter your OTP", "");
-  
+    // let fees = parseInt(localStorage.getItem(fees));
+
+    // console.log(fees);
     if (person == "1234") {
-      alert("We are processing your payment of ₹"+ "2000"  +"");
+      alert("Your Payment is succesfull of  ₹"+ "350"  +" and your ticket is booked");
       paymentDone();
-      window.location.href = "paymentsuccessful.html";
+      window.location.href = "Homepage.html";
     } else {
       alert("Wrong OTP, Try Again");
     }
@@ -550,6 +552,14 @@ function userEmail() {
 
   }
 
+}
+
+// to show user's name in place of login button
+var n = localStorage.getItem("name");
+console.log(n);
+var loginBtnText = document.getElementById("loginBtn");
+if(n.length!==0){
+  loginBtnText.textContent = n;
 }
 
       
